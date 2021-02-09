@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h4>Students database</h4>
+      <!-- Trigger/Open The Modal -->
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form action="" id="formAdd">
+            <input type="text" id="name" placeholder="name" /><br />
+            <input type="text" id="studentNo" placeholder="stu no" /><br />
+            <input type="text" id="password" placeholder="password" /><br />
+            <input type="text" id="amount" placeholder="amount" /><br /><br />
+            <button class="btn btn-outline-dark bt-sm">submit</button>
+          </form>
+        </div>
+      </div>
+      <div id="myModalUpdate" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="closeUpdate">&times;</span>
+          <form action="" id="formUpdate">
+            <input type="text" name="name" placeholder="name" /><br />
+            <input type="text" name="studentNo" placeholder="stu no" /><br />
+            <input type="text" name="password" placeholder="password" /><br />
+            <input type="text" name="amount" placeholder="amount" /><br /><br />
+            <button class="btn btn-outline-info bt-sm" id="edit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <!-- JavaScript Bundle with Popper -->
+      <table id="students" class="table-users">
+        <tr>
+          <th>Student name</th>
+          <th>Student number</th>
+          <th>Password</th>
+          <th>Amount</th>
+          <th>Action</th>
+        </tr>
+      </table>
+      <button class="btn btn-outline-success" id="btnAdd">
+        Add new student
+      </button>
+    </div>
+    <div id="importantId"></div>
+    <!-- firebase -->
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyClV3oK5M8Y2Xn896Von7dypeGryu5uyL8",
+        authDomain: "practice-8cb72.firebaseapp.com",
+        projectId: "practice-8cb72",
+        storageBucket: "practice-8cb72.appspot.com",
+        messagingSenderId: "103261055449",
+        appId: "1:103261055449:web:2987b010d98a6cae8fd1c8",
+        measurementId: "G-MT2JYDLV73",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      var db = firebase.firestore();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
